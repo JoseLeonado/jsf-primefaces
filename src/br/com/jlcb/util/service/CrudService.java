@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -53,15 +54,15 @@ public interface CrudService<T> extends Serializable {
 	T merge(T objeto) throws Exception; 
 	
 	/**
-	 * Carrega a lista de dados de uma determinada classe
+	 * Carrega a lista de dados de uma determinada entidade
 	 * @return List<T>
 	 * @throws Exception
 	 */
-	List<T> findList(Class<T> classe) throws Exception; 
+	List<T> findList(Class<T> entidade) throws Exception; 
 	
-	Object findById(Class<T> classe, Long id) throws Exception; 
+	Object findById(Class<T> entidade, Long id) throws Exception; 
 	
-	T findByPorId(Class<T> classe, Long id) throws Exception; 
+	T findByPorId(Class<T> entidade, Long id) throws Exception; 
 	
 	List<T> findListQueryDinamica(String query) throws Exception; 
 	
@@ -102,6 +103,8 @@ public interface CrudService<T> extends Serializable {
 	SimpleJdbcTemplate getSimpleJdbcTemplate();
 	
 	SimpleJdbcInsert getSimpleJdbcInsert();
+	
+	SimpleJdbcCall getSimpleJdbcCall();
 	
 	Long totalRegistro(String table) throws Exception; 
 	
