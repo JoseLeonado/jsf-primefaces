@@ -1,4 +1,4 @@
-package br.com.jlcb.util;
+package br.com.jlcb.utils;
 
 import java.io.Serializable;
 import java.sql.Connection;

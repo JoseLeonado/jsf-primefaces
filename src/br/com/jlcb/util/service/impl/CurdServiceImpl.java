@@ -14,8 +14,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.jlcb.util.HibernateUtil;
 import br.com.jlcb.util.service.CrudService;
+import br.com.jlcb.utils.HibernateUtil;
 
 /**
  * @author USUARIO
